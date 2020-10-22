@@ -43,11 +43,10 @@ let createColors = (nCount = 8) => {
 
 let createVertices = (nCount = 8) => {
     let vertices = [];
-    let triangleCount = nCount / 2;
+    let triangleCount = nCount;
     let r = 1;
-    let g = Math.PI / triangleCount;
+    let g = 2 * Math.PI / triangleCount;
 
-    // 1. half
     for (let i = 0; i < triangleCount; i += 1) {
         r = Math.random() * .5 + .5;
         let x1 = 0;
@@ -65,9 +64,6 @@ let createVertices = (nCount = 8) => {
         vertices = [...vertices, x1, y1, z1, x2, y2, z2, x3, y3, z3];
     }
 
-    // 2. half
-    vertices.map(x => x * -1);
-    vertices = [...vertices, ...vertices.map(x => x * -1)];
     return new Float32Array(vertices);
 }
 
