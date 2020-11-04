@@ -22,7 +22,7 @@ document.body.onload = _ => {
     colors = createColors(nTriangleCount);
 
     // Index data.
-    let indices2 = new Uint16Array(Array.from(Array(vertices.length).keys()));
+    let indices2 = new Uint16Array(Array.from(Array(48).keys()));
 
     draw(gl.TRIANGLES, vertices, colors, indices2);
 };
